@@ -1,14 +1,22 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
 
-# listen for HTTP requests to "/"
+students = []
 
-# 1 - specify the route and HTTP verb
 @app.route('/')
-# 2 - define a function to be run, when that route is reached
 def root():
-  return render_template("first.html")
+  return render_template("students.html", students=students)
+
+@app.route('/students/new')
+def new():
+  return render_template("new.html")
+
+@app.route("/students")
+def index():
+  new_student = request.args.get("first")
+  students.append(new_student)
+  return redirect(url_for('root'))
 
 # make a route for /rithm
 @app.route('/rithm')

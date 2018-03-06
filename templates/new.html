@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Add a new student!</h1>
+  <form action="/students">
+    <label for="first">First: </label>
+    <input type="text" name="first" id="first">
+    <button>Add a student!</button>
+  </form>
+{% endblock %}
+
+

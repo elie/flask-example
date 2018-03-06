@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>See all the students!</h1>
+  <a href="{{ url_for('index') }}">Add a new student!</a>
+  {% for student in students %}
+    <p>{{student}}</p>
+  {% endfor %}
+{% endblock %}
