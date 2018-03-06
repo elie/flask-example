@@ -1,0 +1,12 @@
+<ul>
+    {% for num in numbers %}
+        <li>{{ num }}</li>
+    {% endfor %}
+</ul>
+
+{% if instructor_name.lower() == "elie" %}
+    <h1>Hello {{ instructor_name }}</h1>
+{% else %}
+    <h1>Go away!</h1>
+{% endif %}
+
